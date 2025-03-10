@@ -1,12 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PublicTrivia from './PublicTrivia';
+import WiCSTrivia from './WiCSTrivia';
+import LandingPage from './Landing';
 
-function App() {
+// Routes to navigate between pages - App holds all my routes and / is the default path
+// So when I go to localhost:/ landing page is the first component that comes up 
 
+export default function App() {
   return (
-    <div className='bg-red-500 flex'>
-      Hello
-
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />}/>
+        <Route path="/public-trivia" element={<PublicTrivia/>}/>
+        <Route path="/wics-trivia" element={<WiCSTrivia/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
