@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PublicTrivia from './PublicTrivia';
+import Public from './Public';
 import WiCSTrivia from './WiCSTrivia';
 import LandingPage from './Landing';
 
@@ -11,7 +11,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}/>
-        <Route path="/public-trivia" element={<PublicTrivia/>}/>
+        <Route path="/public" element={<Public/>}/>
         <Route path="/wics-trivia" element={<WiCSTrivia/>}/>
       </Routes>
     </BrowserRouter>
