@@ -5,7 +5,15 @@ export default function Public() {
     const [triviaData, setTriviaData] = useState(null)
 
     async function getTriviaQuestion() {
-       
+       const url = "https://jsonplaceholder.typicode.com/posts/13"
+
+       try {
+        const response = await fetch(url)
+        const json = await response.json()
+        return {text : json['body']}
+       } catch(err) {
+        console.log(err)
+       }
       }
 
     useEffect(() => {

@@ -5,7 +5,14 @@ export default function WiCSTrivia() {
     const [triviaData, setTriviaData] = useState(null)
     
         async function getTriviaQuestion() {
-           
+          const url = "http://127.0.0.1:5000/question?amount=2"
+          try {
+            const response = await fetch(url)
+            const json = await response.json()
+            return json
+           } catch(err) {
+            console.log(err)
+           }
           }
     
         useEffect(() => {

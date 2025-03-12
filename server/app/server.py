@@ -21,8 +21,18 @@ def getTriviaQuestion():
     ]
 
     result = []
+    amount = request.args.get('amount')
+    if not amount:
+        amount = 1
+
+    for i in range(int(amount)):
+        result.append(questions[i])
             
     return result
+
+@app.route("/wics")
+def wics():
+    return 'hello wics'
 
 @app.route("/")
 def hello():
