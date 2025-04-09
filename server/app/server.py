@@ -10,29 +10,18 @@ CORS(app)
 @app.route("/question", methods=['GET'])
 def getTriviaQuestion():
     questions = [
-        {'question' : 'When was WiCS founded?', 'answer': '2013', 'id':1},
-        {'question' : 'What class code is Advanced Data Structures?', 'answer': 'CS351', 'id':2},
+        {'question' : 'What is the Green Mountain in Oman?', 'answer': 'Jabal Akhdar', 'id':1},
+        {'question' : 'What is the capital of Oman', 'answer': 'Muscat', 'id':2},
         {'question' : 'Where is the WiCS Lounge', 'answer': 'inside the CS Lounge', 'id':3},
-        {'question' : 'Who is the head of department of UIC CS', 'answer': 'Prof Bob Sloan', 'id':4},
-        {'question' : 'Who is WiCS Faculty Advisor', 'answer': 'Prof Shanon Reckinger', 'id':5},
-        {'question' : 'What is WiCS biggest event', 'answer': 'Scavenger Hunt', 'id':6},
-        {'question' : 'When was the first SparkHacks?', 'answer': '2023', 'id':7},
-        {'question' : 'Who is teaching CS361', 'answer': 'Prof Maratos', 'id':8}
+        {'question' : 'What was the old name of UTAS', 'answer': 'Higher College of Technology', 'id':4},
+        {'question' : 'What is the official language of Oman', 'answer': 'Arabic', 'id':5},
+        {'question' : 'Which sea surrounds Oman', 'answer': 'Arabian Sea', 'id':6},
+        {'question' : 'When is National Day?', 'answer': 'November 18', 'id':7}
     ]
 
     result = []
-    amount = request.args.get('amount')
-    if not amount:
-        amount = 1
-
-    for i in range(int(amount)):
-        result.append(questions[i])
             
     return result
-
-@app.route("/wics")
-def wics():
-    return 'hello wics'
 
 @app.route("/")
 def hello():

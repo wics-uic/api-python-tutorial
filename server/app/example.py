@@ -1,5 +1,5 @@
 import requests
 import json 
-res = requests.get('https://jsonplaceholder.typicode.com/posts/12')
+res = requests.get('API ENDPOINT')
 response = json.loads(res.text)
-print(response['body'])
+print(response)
