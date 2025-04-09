@@ -9,6 +9,7 @@ CORS(app)
 
 @app.route("/question", methods=['GET'])
 def getTriviaQuestion():
+    
     questions = [
         {'question' : 'What is the Green Mountain in Oman?', 'answer': 'Jabal Akhdar', 'id':1},
         {'question' : 'What is the capital of Oman', 'answer': 'Muscat', 'id':2},
@@ -20,8 +21,16 @@ def getTriviaQuestion():
     ]
 
     result = []
+    num_questions = request.args.get('amount')
+
+    for i in range(int(num_questions)):
+        result.append(questions[i])
             
     return result
+
+@app.route("/muscat/oman")
+def muscat():
+    return 'hello muscat, oman'
 
 @app.route("/")
 def hello():
